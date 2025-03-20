@@ -1,0 +1,48 @@
+h1 {
+  color: red;
+  font-size: 3rem;
+  font-family: "Bytesized";
+}
+
+h2 {
+  color: green;
+  font-weight: bold;
+}
+
+h3 {
+  color: lime;
+}
+
+p {
+  color: rgb(93, 116, 116);
+}
+
+.blue-color {
+  color: blue;
+}
+
+body {
+  background-color: rgb(34, 130, 130);
+}
+
+h3 {
+  color: #11de11;
+  font-size: 1.5rem;
+}
+
+section {
+  text-align: center;
+  border: 1px solid red;
+}
+
+/*
+{ } - grouping
+[ ] - js
+( ) - js
+< > - html
+; - to end a  line
+: -  prpperty declaration
+Syntax - rules of a language
+hyphen - to connect words
+, - to group tags
+*/
