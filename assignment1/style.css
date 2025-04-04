@@ -1,0 +1,69 @@
+body {
+  background: url("parchment-texture.jpg") no-repeat center center fixed;
+  background-size: cover;
+  font-family: "Sixtyfour", serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.book {
+  background: rgba(11, 11, 12, 0.9);
+  width: 80%;
+  max-width: 600px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  line-height: 1.8;
+  border: 4px solid #8f5b17;
+  border-image: url("gold-border.png") 30 round;
+  text-align: center;
+}
+
+h1 {
+  color: aliceblue;
+  text-shadow: 2px 2px 20px rgba(195, 140, 12, 0.735);
+  font-size: 40px;
+  padding-bottom: 10px;
+}
+
+h2 {
+  color: #5a2d0c;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  font-size: 26px;
+  padding: 10px;
+}
+
+.box {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 2px solid #5a2d0c;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.question {
+  font-weight: bold;
+  color: #4a2600;
+  font-size: 18px;
+  text-transform: uppercase;
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+.question:hover {
+  text-shadow: 0 0 10px rgba(24, 195, 207, 0.8);
+  color: aliceblue;
+}
+
+.answer:hover {
+  text-shadow: 0 0 10px rgba(255, 85, 18, 0.8);
+  color: aliceblue;
+}
+
+.answer {
+  font-style: italic;
+  color: #3d1e00;
+  margin-left: 10px;
+}
