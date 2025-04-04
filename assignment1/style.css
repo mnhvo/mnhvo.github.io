@@ -4,23 +4,21 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   padding-top: 4rem;
   min-height: fit-content;
   max-height: fit-content;
 }
 
+/* I use this to keep everything in a screen like box to represent the tv screen */
 .main {
-  background: rgba(11, 11, 12, 0.9);
-  width: 80%;
-  max-width: 120rem;
-  padding: 30px;
-  border-radius: 30px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  position: relative;
+  background: #040f16;
+  width: 70%;
+  max-width: 70rem;
+  padding: 2rem;
+  border-radius: 2rem;
   line-height: 1.8;
-  border: 10px solid #7d4f12;
-  border-style: double;
+  border: 0.5rem solid #878889;
+  border-style: solid;
   text-align: center;
   overflow-y: scroll;
   max-height: 55rem;
@@ -29,70 +27,81 @@ body {
 
 h1 {
   color: aliceblue;
-  text-shadow: 2px 2px 20px rgba(195, 140, 12, 0.735);
-  font-size: 40px;
+  text-shadow: 1rem rgba(12, 149, 195, 0.735);
+  font-size: 3rem;
   padding-bottom: 1px;
   justify-content: center;
   align-items: center;
 }
 
 h2 {
-  color: #5a2d0c;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  color: aliceblue;
+  text-shadow: 0 0 1rem rgba(21, 200, 255, 0.781);
   font-size: 26px;
-  padding-bottom: 5px;
+  padding-bottom: 0.2rem;
 }
 
 a {
-  color: #5a2d0c;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  color: #4d4d4d;
   font-size: 1rem;
-  padding-bottom: 1rem;
 }
 
 a:hover {
-  color: rgb(133, 127, 255);
+  color: rgb(177, 173, 255);
+  text-shadow: 0 0 1rem #824ddd;
 }
 
+/* separation of each question and answer into their own boxes  */
 .box {
-  margin-bottom: 20px;
-  padding: 15px;
-  border: 2px solid #5a2d0c;
-  border-radius: 5px;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border: 0.2rem solid #767676;
+  border-radius: 1rem;
   background: rgba(0, 0, 0, 0.85);
 }
 
+/* text base is dark and glow on hover to create the effect of a crt tv with glowing text */
 .question {
   font-weight: bold;
-  color: #4a2600;
+  color: #005d7c7e;
   font-size: 1.1rem;
   text-transform: uppercase;
-  transition: text-shadow 0.3s ease-in-out;
+  transition: text-shadow 0.6s ease-in-out;
 }
 
 .question:hover {
-  text-shadow: 0 0 10px rgba(24, 195, 207, 0.8);
-  color: aliceblue;
+  text-shadow: 0 0 1rem #b5ffe9;
+  color: rgb(255, 255, 255);
 }
 
 .answer {
   font-style: italic;
-  color: #322b25;
+  color: #c5e0d88c;
   margin-left: 1rem;
+  transition: text-shadow 0.6s ease-in-out;
 }
 
 .answer:hover {
-  text-shadow: 0 0 15px rgba(255, 85, 18, 0.8);
-  color: aliceblue;
+  text-shadow: 0 0 1rem #b5ffe9;
+  color: rgb(255, 255, 255);
 }
 
 ul {
   font-style: italic;
-  color: #322b25;
+  color: #c5e0d88c;
   margin-left: 1rem;
 }
 
 ul:hover {
-  text-shadow: 0 0 15px rgba(255, 85, 18, 0.8);
-  color: aliceblue;
+  text-shadow: 0 0 1rem #b5ffe9;
+  color: rgb(255, 255, 255);
+}
+
+/* used to create tvbutton effects using 4 textless borders */
+.tvbuttons {
+  background: #353636;
+  padding: 4rem;
+  border-radius: 20rem;
+  border: 0.2rem solid #1b252b;
+  border-style: inset;
 }
