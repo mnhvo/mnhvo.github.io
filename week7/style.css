@@ -1,0 +1,24 @@
+button {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10%;
+}
+
+button:hover {
+  scale: 0.9;
+  background-color: rgb(141, 205, 245);
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+video,
+audio {
+  padding: 10%;
+}
+
+video {
+  width: 600px;
+  height: 400px;
+}
