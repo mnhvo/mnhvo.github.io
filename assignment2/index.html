@@ -3,9 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Assignment 2</title>
+    <!-- add the font family of your choice -->
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <h2>assignment 2</h2>
+    <!-- YouTube Background Video -->
+<div class="video-background">
+    <iframe
+    id="background-video"
+    width="100%"
+    height="100%"
+    src="https://www.youtube.com/embed/z9Ug-3qhrwY?autoplay=1&mute=1&loop=1&controls=0&playlist=z9Ug-3qhrwY&modestbranding=1&showinfo=0&rel=0"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen
+  ></iframe>
+    </div>
+ 
+  <!-- Background Music -->
+  <audio id="background-music" loop>
+    <source src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/erokia_ambient-wave-56-msfxp7-78.mp3" type="audio/mpeg" />
+  </audio>
+  
+    <!-- Header Section -->
+    <header>
+      <h1>Media Player Website</h1>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="container">
+      <!-- Media Player Section -->
+      <div class="media-player">
+        <video id="custom-video-player" controls>
+        </video>
+        </div>
+
+        <!-- Add more content as needed -->
+      </section>
+    </main>
+
+    <!-- Pomodoro Timer Controls -->
+    <div class="pomodoro-controls">
+      <button id="start-pause-timer">Begin Timer</button>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="pomodoro-progress-bar">
+      <span id="pomodoro-progress-fill"></span>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="background-music" loop>
+      <source
+        src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/erokia_ambient-wave-56-msfxp7-78.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+
+    <!-- Footer Section -->
+    <footer>
+      <p>&copy; 2024 Media Player Website. All rights reserved.</p>
+      <a href="https://icons8.com/icon/59862/play">Play</a> icon by
+      <a href="https://icons8.com">Icons8</a>
+      <a href="https://icons8.com/icon/61012/pause">Pause</a> icon by
+      <a href="https://icons8.com">Icons8</a>
+    </footer>
   </body>
 </html>
