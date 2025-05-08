@@ -3,73 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Assignment 2</title>
-    <!-- add the font family of your choice -->
-    <link rel="stylesheet" href="reset.css" />
+    <title>Pomodoro With Ghibli</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gasoek+One&family=Plaster&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <!-- YouTube Background Video -->
-<div class="video-background">
-    <iframe
-    id="background-video"
-    width="100%"
-    height="100%"
-    src="https://www.youtube.com/embed/z9Ug-3qhrwY?autoplay=1&mute=1&loop=1&controls=0&playlist=z9Ug-3qhrwY&modestbranding=1&showinfo=0&rel=0"
-    frameborder="0"
-    allow="autoplay; encrypted-media"
-    allowfullscreen
-  ></iframe>
+    <div id="video-background-container">
+      <iframe
+        id="youtube-bg"
+        src="https://www.youtube.com/embed/z9Ug-3qhrwY?autoplay=1&mute=1&loop=1&controls=0&playlist=z9Ug-3qhrwY&modestbranding=1&showinfo=0&rel=0"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+      ></iframe>
     </div>
- 
-  <!-- Background Music -->
-  <audio id="background-music" loop>
-    <source src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/erokia_ambient-wave-56-msfxp7-78.mp3" type="audio/mpeg" />
-  </audio>
-  
-    <!-- Header Section -->
-    <header>
-      <h1>Media Player Website</h1>
-    </header>
-
-    <!-- Main Content Section -->
-    <main class="container">
-      <!-- Media Player Section -->
-      <div class="media-player">
-        <video id="custom-video-player" controls>
-        </video>
+    <audio
+      id="background-music"
+      loop
+      src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/erokia_ambient-wave-56-msfxp7-78.mp3"
+    ></audio>
+    <audio id="bell-sound" src="bell.mp3"></audio>
+    <div id="ui-bottom-left-wrapper">
+      <h2 id="site-subtitle">Study with Ghibli</h2>
+      <div id="controls-container">
+        <div class="control-group" id="session-buttons">
+          <button id="work-btn" class="session-btn">Start Work</button>
+          <button id="break-btn" class="session-btn">Start Break</button>
         </div>
-
-        <!-- Add more content as needed -->
-      </section>
-    </main>
-
-    <!-- Pomodoro Timer Controls -->
-    <div class="pomodoro-controls">
-      <button id="start-pause-timer">Begin Timer</button>
+        <div class="control-group" id="custom-timer-group">
+          <label for="custom-minutes-input">Custom (mins):</label>
+          <input
+            type="number"
+            id="custom-minutes-input"
+            min="1"
+            value="10"
+            class="custom-input"
+          />
+          <button id="custom-btn" class="session-btn">Start Custom</button>
+        </div>
+        <button id="reset-btn">Reset</button>
+        <div class="control-group" id="volume-control">
+          <label for="volume-slider">Music Volume:</label>
+          <input
+            type="range"
+            id="volume-slider"
+            min="0"
+            max="1"
+            step="0.01"
+            value="0.5"
+          />
+        </div>
+      </div>
     </div>
-
-    <!-- Progress Bar -->
-    <div class="pomodoro-progress-bar">
-      <span id="pomodoro-progress-fill"></span>
+    <div id="timer-display">25:00</div>
+    <div id="progress-bars-container">
+      <div id="work-progress-bar" class="progress-bar"></div>
+      <div id="break-progress-bar" class="progress-bar"></div>
     </div>
-
-    <!-- Background Music -->
-    <audio id="background-music" loop>
-      <source
-        src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/erokia_ambient-wave-56-msfxp7-78.mp3"
-        type="audio/mpeg"
-      />
-    </audio>
-
-    <!-- Footer Section -->
-    <footer>
-      <p>&copy; 2024 Media Player Website. All rights reserved.</p>
-      <a href="https://icons8.com/icon/59862/play">Play</a> icon by
-      <a href="https://icons8.com">Icons8</a>
-      <a href="https://icons8.com/icon/61012/pause">Pause</a> icon by
-      <a href="https://icons8.com">Icons8</a>
-    </footer>
+    <script src="script.js"></script>
   </body>
 </html>

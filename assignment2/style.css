@@ -1,135 +1,166 @@
-:root {
-  --primary-bg-color: #f4f4f4;
-  --text-color: #333;
-  --main-bg-color: #333;
-  --main-text-color: #fff;
-  --main-btn-bg-color: #938989;
-}
-
-body,
-h1,
-p,
-ul {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-/* Video Background */
-.video-background {
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: "Lora", serif;
+  color: #f0f8ff;
+}
+
+/* YouTube background video styling to make it so that the video takes up the entire screen no
+matter window size, as well as make it so that the youtube UI elements are hidden as much as possible */
+#video-background-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
+  pointer-events: none;
 }
 
-#background-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+#youtube-bg {
+  width: 100vw;
+  min-height: 100vh;
+  min-width: 177.77vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-body {
-  font-family: "Arial", sans-serif;
-  background-color: var(--primary-bg-color);
-  color: var(--text-color);
-  line-height: 1.6;
+#ui-bottom-left-wrapper {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 10;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  align-items: flex-start;
 }
 
-.container {
-  max-width: 1000px;
-  width: 100%;
-  padding: 10px;
+#site-subtitle {
+  font-size: 1.9rem;
+  font-weight: normal;
+  color: #d6eeca;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  margin-bottom: 8px;
+  padding-left: 5px;
+  font-family: "Gasoek One", sans-serif;
 }
 
-header {
-  background-color: var(--main-bg-color);
-  color: var(--main-text-color);
-  padding: 10px 0;
-  text-align: center;
-  width: 100%;
-}
-
-.media-player {
-  width: 100%;
-  margin: 0 auto;
-}
-
-.media-player video {
-  max-width: 100%;
-}
-
-.custom-controls {
+/* control panel styling */
+#controls-container {
+  background-color: rgba(60, 80, 70, 0.7);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 10px;
-  width: 100%;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.custom-controls button {
-  background-color: var(--main-btn-bg-color);
-  color: var(--main-text-color);
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#controls-container label {
+  font-size: 0.9em;
+  color: #d4e6c8;
+}
+
+/* Buttons Styling */
+#controls-container button,
+.custom-input {
+  background-color: #a9d18e;
+  color: #3c5046;
   border: none;
   padding: 8px 12px;
+  border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
+  font-family: "Lora", serif;
+  font-weight: bold;
+  font-size: 0.9em;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease;
 }
 
-.progress-bar {
-  width: 100%;
-  height: 10px;
-  background-color: #ddd;
-  margin-top: 10px;
-  overflow: hidden;
+#controls-container button:hover {
+  background-color: #c1e0b1;
+  transform: scale(0.97);
 }
 
-.progress-bar span {
-  display: block;
-  height: 100%;
-  width: 0;
-  transition: width 0.3s ease;
+#controls-container button:active {
+  background-color: #c1e0b1;
+  transform: scale(0.8);
 }
 
-/* Pomodoro Timer Controls */
-.pomodoro-controls {
+#controls-container button.active-session {
+  background-color: #e87a7a;
+  color: white;
+}
+#controls-container button.active-session:hover {
+  background-color: #f08f8f;
+}
+
+.custom-input {
+  width: 60px;
   text-align: center;
-  margin: 20px 0;
-  padding: 5%;
 }
 
-/* Pomodoro Progress Bar */
-.pomodoro-progress-bar {
+#volume-slider {
+  cursor: pointer;
+  width: 150px;
+}
+
+#timer-display {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  font-size: 3em;
+  font-weight: bold;
+  font-family: "Plaster", system-ui;
+  color: #f0f8ff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+  z-index: 5;
+}
+
+#progress-bars-container {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 40px;
-  background-color: #ddd;
-  z-index: 1000;
+  height: 12px;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 5;
 }
 
-#pomodoro-progress-fill {
-  display: block;
+.progress-bar {
   height: 100%;
-  background-color: #ffff00;
   width: 0%;
-  transition: width 1s linear;
+  transition: width 0.5s ease-out, background-color 0.3s ease;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
-/* Footer styling */
-footer {
-  background-color: var(--main-bg-color);
-  color: var(--main-text-color);
-  text-align: center;
-  padding: 10px 0;
-  width: 100%;
+#work-progress-bar {
+  background-color: #7fbf7f;
+}
+
+#break-progress-bar {
+  background-color: #94def6;
+}
+
+/* This is used for all the elements that will be hidden once the timer is activated */
+.hidden {
+  display: none;
 }
