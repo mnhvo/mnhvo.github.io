@@ -11,29 +11,22 @@
     />
   </head>
   <body>
-    <!-- The main desktop area where icons and windows will live -->
     <div id="desktop">
-      <div id="desktop-icons">
-        <!-- Icons will be dynamically generated here -->
-      </div>
+      <div id="desktop-icons"></div>
     </div>
 
-    <!-- The taskbar at the bottom of the screen -->
     <div id="taskbar">
       <div id="start-button-container">
         <button id="start-button">
           <img src="assets/icons/start-icon.png" alt="Start" />
           <span>Start</span>
         </button>
-        <div id="start-menu" class="hidden">
-          <!-- Start menu items will be generated here -->
-        </div>
+        <div id="start-menu" class="hidden"></div>
       </div>
       <div id="taskbar-divider"></div>
       <div id="clock"></div>
     </div>
 
-    <!-- Templates (not visible) for creating new elements -->
     <template id="icon-template">
       <div class="desktop-icon" tabindex="0">
         <img src="" alt="" />
@@ -68,14 +61,11 @@
             </button>
           </div>
         </div>
-        <div class="window-content">
-          <!-- Content will go here -->
-        </div>
+        <div class="window-content"></div>
         <div class="window-resize-handle"></div>
       </div>
     </template>
 
-    <!-- JavaScript files -->
     <script src="data.js"></script>
     <script src="script.js"></script>
   </body>
