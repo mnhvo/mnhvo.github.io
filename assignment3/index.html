@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retro OS - Design Archive</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- The main desktop area where icons and windows will live -->
+    <div id="desktop">
+      <div id="desktop-icons">
+        <!-- Icons will be dynamically generated here -->
+      </div>
+    </div>
+
+    <!-- The taskbar at the bottom of the screen -->
+    <div id="taskbar">
+      <div id="start-button-container">
+        <button id="start-button">
+          <img src="assets/icons/start-icon.png" alt="Start" />
+          <span>Start</span>
+        </button>
+        <div id="start-menu" class="hidden">
+          <!-- Start menu items will be generated here -->
+        </div>
+      </div>
+      <div id="taskbar-divider"></div>
+      <div id="clock"></div>
+    </div>
+
+    <!-- Templates (not visible) for creating new elements -->
+    <template id="icon-template">
+      <div class="desktop-icon" tabindex="0">
+        <img src="" alt="" />
+        <span></span>
+      </div>
+    </template>
+
+    <template id="window-template">
+      <div class="window" tabindex="0">
+        <div class="window-header">
+          <span class="window-title"></span>
+          <div class="window-controls">
+            <button class="minimize-btn" aria-label="Minimize">
+              <svg
+                width="10"
+                height="10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path stroke="#000" stroke-width="2" d="M1 9h8" />
+              </svg>
+            </button>
+            <button class="close-btn" aria-label="Close">
+              <svg
+                width="10"
+                height="10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path stroke="#000" stroke-width="2" d="M1 1l8 8M9 1L1 9" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="window-content">
+          <!-- Content will go here -->
+        </div>
+        <div class="window-resize-handle"></div>
+      </div>
+    </template>
+
+    <!-- JavaScript files -->
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
