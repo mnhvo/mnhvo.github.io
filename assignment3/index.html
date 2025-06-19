@@ -5,68 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Design Archive</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <!-- "VT323" emulates the old look seen in retro interfaces.-->
     <link
       href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
+    <!--This is the main container for the "desktop" interface.
+        By giving it an ID, I can easily select and style it with CSS
+        and manipulate it with JavaScript. It'll also be the boundary
+        for movable windows.-->
     <div id="desktop">
-      <div id="desktop-icons"></div>
-    </div>
-
-    <div id="taskbar">
-      <div id="start-button-container">
-        <button id="start-button">
-          <img src="assets/icons/start-icon.png" alt="Start" />
-          <span>Start</span>
-        </button>
-        <div id="start-menu" class="hidden"></div>
-      </div>
-      <div id="taskbar-divider"></div>
-      <div id="clock"></div>
-    </div>
-
-    <template id="icon-template">
-      <div class="desktop-icon" tabindex="0">
-        <img src="" alt="" />
-        <span></span>
-      </div>
-    </template>
-
-    <template id="window-template">
-      <div class="window" tabindex="0">
-        <div class="window-header">
-          <span class="window-title"></span>
-          <div class="window-controls">
-            <button class="minimize-btn" aria-label="Minimize">
-              <svg
-                width="10"
-                height="10"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path stroke="#000" stroke-width="2" d="M1 9h8" />
-              </svg>
-            </button>
-            <button class="close-btn" aria-label="Close">
-              <svg
-                width="10"
-                height="10"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path stroke="#000" stroke-width="2" d="M1 1l8 8M9 1L1 9" />
-              </svg>
-            </button>
-          </div>
+      <!--  This holds the folder icons.
+            I use a separate container to make it easy to center the icons
+            on the desktop using CSS Flexbox or Grid, without affecting
+            other elements that may be added later>-->
+      <div id="icon-grid">
+        <!--This is the first folder for "Graphic Design".
+        <div> is used as a container for the icon image and label.
+        All of the folders will be created in the same strcuture (just with a different ID)
+        making it modular, so if i wanted to add more folder I could -->
+        <div class="folder-icon" data-folder-id="graphics">
+          <!-- The image for the folder icon. Using a royalty-free pixel art icon. -->
+          <img
+            src="https://img.icons8.com/plasticine/100/000000/folder-invoices.png"
+            alt="Folder Icon"
+          />
+          <!-- The label for the folder. -->
+          <p>Graphic Design</p>
         </div>
-        <div class="window-content"></div>
-        <div class="window-resize-handle"></div>
+        <!-- This is the second folder for "Photography".-->
+        <div class="folder-icon" data-folder-id="photography">
+          <img
+            src="https://img.icons8.com/plasticine/100/000000/folder-invoices.png"
+            alt="Folder Icon"
+          />
+          <p>Photography</p>
+        </div>
+        <!--This is the third folder for "3D".-->
+        <div class="folder-icon" data-folder-id="3d">
+          <img
+            src="https://img.icons8.com/plasticine/100/000000/folder-invoices.png"
+            alt="Folder Icon"
+          />
+          <p>3D</p>
+        </div>
       </div>
-    </template>
+    </div>
+    <!-- End of the desktop container -->
 
-    <script src="data.js"></script>
-    <script src="script.js"></script>
+    <!-- 
+        Audio Elements for UI Sounds.
+        These will be controlled by JavaScript.
+    -->
+    <audio
+      id="open-sound"
+      src="https://www.myinstants.com/media/sounds/pisseim-mund-online-audio-converter.mp3"
+      preload="auto"
+    ></audio>
+    <audio
+      id="close-sound"
+      src="https://www.myinstants.com/media/sounds/mouse-click-by-ek6_VR0O6PL.mp3"
+      preload="auto"
+    ></audio>
   </body>
 </html>
